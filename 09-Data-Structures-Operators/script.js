@@ -565,5 +565,24 @@ function checkOnlineContent(item)
 {
   item.onlineContent && console.log(`${item.title} provides online content`);
 };
+/********************************************************************* The Nullish Coalescing operator ****************************************************************/
+/*
+// With short circuiting
+restaurant.numGuests = 0;
+console.log(restaurant.numGuests || 10); // 10 -> This is not the expected result. 
+// The output should be 0, but because 0 is a falsy value then the or || operator returns 10, the first truthy value.
+// With the Nullish Coalescing operator
+console.log(restaurant.numGuests ?? 10); // 0
+// it works only with nullish value: null or undefined (NOT 0 or "")
+/******************************************************************************* Challenge ****************************************************************************/
+//books.forEach(checkOnlineContentNullish);
 
-
+/**
+ * Example of short circuiting with the Nullish Coalescing operator.
+ * Print a formatted string for the books that does not provide online content.
+ * @param {object} item - object in books array
+ */
+function checkOnlineContentNullish(item)
+{
+  item.onlineContent ?? console.log(`${item.title} provides no data about its online content`);
+}
