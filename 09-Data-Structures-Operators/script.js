@@ -586,3 +586,53 @@ function checkOnlineContentNullish(item)
 {
   item.onlineContent ?? console.log(`${item.title} provides no data about its online content`);
 }
+/**************************************************************** Logical Assignment Operators *************************************************************************/
+/*
+const rest1 = {
+  name: "Capri",
+  numGuests: 0
+  // numGuests: 20
+};
+
+const rest2 = {
+  name: "La Piazza",
+  owner: "MAX Crisafulli"
+};
+// shortcircuiting without Logical Assignment Operators
+//rest1.numGuests = rest1.numGuests || 10; // it doesnt assign any value to numGuests since it already contain a truthy value 20
+//rest2.numGuests = rest2.numGuests || 10; // it assign 10 as value to numGuests since numGuests doesn't exist in rest2 object, it is a falsy value.
+
+// with OR Assignment Operators
+// it doesn't work with 0 value since it is a falsy value
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// with Nullish Assignment Operators
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+console.log(rest1);
+console.log(rest2);
+
+// shortcircuiting without Logical Assignment Operators
+//rest1.owner = rest1.owner && "<ANONYMOUS>"; // undefined since the AND operator shortcircuit the falsy value (rest1.owner doesn't exist)
+//rest2.owner = rest2.owner && "<ANONYMOUS>"; // rest2.owner = <ANONYMOUS>
+
+// with AND Assignment Operators
+rest1.owner &&= "<ANONYMOUS>"; 
+rest2.owner &&= "<ANONYMOUS>";
+console.log(rest1);
+console.log(rest2);
+/******************************************************************************* Challenge ****************************************************************************/
+/*
+// Example of short circuiting with OR assignments operator
+// Loop over the books array, and assign the edition property with a number 1 (if it doesn't already exist)
+for (let i=0; i < books.length; i++) books[i].edition ||= 1;
+console.log(books);
+
+// Iterate over the books array, and if the thirdParty.goodreads.rating property is less than 4.2, reassign the highlighted property to false.
+for (let i=0; i < books.length; i++) 
+{
+  books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+}
+console.log(books);
+*/ 
