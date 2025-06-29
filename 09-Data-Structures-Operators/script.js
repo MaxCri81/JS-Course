@@ -726,6 +726,66 @@ printGoals(...game.scored);
 
 // 7.
 team1 < team2 && console.log("Team1 is more likely to win") || team2 < team1 && console.log("Team2 is more likely to win");
+/***************************************************************** The for of Loop ***********************************************************************************/
+/*
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]; // joins two arrays, see section at the beginning
+console.log(menu);
+// For of Loop
+for (const item of menu) console.log(item);
+// For of Loop with indexed items
+for (const item of menu.entries()) console.log(item);
+
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+console.log("");
+
+// For of Loop with destructuring
+for (const [key, value] of menu.entries()) {
+  console.log(`${key + 1}: ${value}`);
+}
+  
+// Create an Iterator
+console.log(menu.entries());
+// Expand an Iterator
+console.log([...menu.entries()]);
+/******************************************************************************* Challenge ****************************************************************************/
+// Use the for-of loop to loop over the books array and sum the pages of all books. Use the pageSum variable and the pages property of the book objects.
+/*
+let pageSum = 0;
+for (const {pages} of books) pageSum += pages; // used object desctructuring
+console.log(pageSum);
+/*
+Below is the allAuthors variable which stores an empty array. Use the for-of loop to fill allAuthors with the authors of each book from the books array.
+Remember that each book object has the author property, which can be a string (if there is only a single author) or an array (if there are multiple authors). You may need to use the typeof operator. You can also use multiple loops if needed. The allAuthors array should have just one level (no nested arrays).
+
+let allAuthors = [];
+for (const {author} of books) 
+{
+  if (typeof author == "string") allAuthors.push(author);
+  else for (const i of author) allAuthors.push(i);
+}
+console.log(allAuthors);
+/*
+//Without shortcut
+allAuthors = [];
+for (const book of books) {
+  if (typeof book.author === 'string') {
+    allAuthors.push(book.author)
+  } else {
+    for (const author of book.author) {
+      allAuthors.push(author);
+    }
+  }
+}
+console.log(allAuthors);
 */
-
-
+/*Use the for-of loop together with Array's entries() method to log each author from allAuthors to the console together with its index.
+ Make the index start from 1, instead of 0.
+*/
+/*
+for (const [key, value] of allAuthors.entries())
+{
+  console.log(`${key + 1}: ${value}`);
+}
+*/
