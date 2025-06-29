@@ -3,4 +3,5 @@ Lecture Content
 - Spread and Rest operator
 - Short Circuiting
 - The Nullish Coalescing and Logical Assignment operators
+- The For of Loop
 - Challenges
