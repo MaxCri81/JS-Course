@@ -5,4 +5,5 @@ Lecture Content
 - The Nullish Coalescing and Logical Assignment operators
 - The For of Loop
 - Enhanced Object Literal
+- Optional Chaining
 - Challenges
