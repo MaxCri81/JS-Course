@@ -789,3 +789,72 @@ for (const [key, value] of allAuthors.entries())
   console.log(`${key + 1}: ${value}`);
 }
 */
+/************************************************************** Enhanced Object Literal ********************************************************************************/
+const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+// 👉 Enhanced to Object Literal -> property names can be computed other than written
+const hours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  [`Day-${2+4}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const testObj = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  // 👉 Enhanced to Object Literal -> add another object into an object
+  hours,
+
+  /**
+   * 👉 Enhanced to Object Literal -> do not need to write colons and the function word
+   * Return an array from the restaurant object at properties
+   * starterMenu and mainMenu.
+   * @param {string} starterIndex - starterMenu value 
+   * @param {string} mainIndex - mainMenu value
+   * @returns an array with the string values of starterMenu 
+   * and mainMenu at indexes starterIndex and mainIndex
+   */
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+};
+/*
+console.log(testObj);
+/******************************************************************************* Challenge ****************************************************************************/
+/*
+const bookData = [
+  ['title', 'Computer Networking: A Top-Down Approach'],
+  ['author', ['James F. Kurose', 'Keith W. Ross']],
+  ['publisher', 'Addison Wesley'],
+];
+
+// Using computed properties, fill the newBook object with the properties and values from the bookData array.
+const newBook = {
+  [bookData[0][0]]: bookData[0][1],
+  [bookData[1][0]]: bookData[1][1],
+  [bookData[2][0]]: bookData[2][1],
+};
+console.log(newBook);
+
+const pages = 880;
+//Add pages as a property of the newBook2 object
+const newBook2 = {
+  title: 'The C Programming Language',
+  author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
+  pages
+};
+console.log(newBook2);
+*/
