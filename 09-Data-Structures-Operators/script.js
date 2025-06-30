@@ -857,4 +857,44 @@ const newBook2 = {
   pages
 };
 console.log(newBook2);
+/**************************************************************************** Optional Chaining ************************************************************************/
+/*
+// Chack if a property exist and print the content if it does.
+// With if statement
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+// With AND operator
+restaurant.openingHours.mon && console.log(restaurant.openingHours.mon.open);
+// With Optional Chaining
+console.log(restaurant.openingHours.mon?.open);
+
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+for (const day of days) {
+  // We cannon use the dot since day is not a property in the object. We have to use [day]
+  // Note. sat open at 0, it is a falsy value so we need the nullish operator ?? if we want to assign a default value for the other not existing values
+  console.log(restaurant.openingHours[day]?.open ?? "Closed");  
+}
+
+console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
+console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist");
+
+console.log(books[0]?.title ?? "Title array empty");
+console.log(books[10]?.title ?? "Title array empty");
+/******************************************************************************* Challenge ****************************************************************************/
+const newBook2 = {
+  title: 'The C Programming Language',
+  author: ['Brian W. Kernighan', 'Dennis M. Ritchie']
+};
+
+/**
+ * Print the first keyword from the book's keywords property (array) or undefined 
+ * (if the keywords property doesn't exist). It use optional chaining.
+ * @param {object} bookObject - book object
+ */
+function getFirstKeyword(bookObject)
+{
+  console.log(bookObject.keywords?.[0]);
+}
+/*
+getFirstKeyword(books[0]);
+getFirstKeyword(newBook2);
 */
