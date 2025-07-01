@@ -1,5 +1,27 @@
 'use strict';
 
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+
 // Data needed for the lecture
 const restaurant = {
   name: 'Classico Italiano',
@@ -301,7 +323,7 @@ console.log(k, l, m);
 // (on the right) is shorter than the number of arguments (on the left)
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
-/************************************************************************************ Challenge ************************************************************************/
+/*********************************************************************************** Challenge ************************************************************************/
 /*
 const [firstBook, secondBook] = books;
 console.log(firstBook, secondBook);
@@ -360,7 +382,7 @@ restaurant.orderDelivery({
   address: "Via ruggero settimo, 122"
 });
 
-/************************************************************************************ Challenge ************************************************************************/
+/*********************************************************************************** Challenge ************************************************************************/
 /*
 console.log(books[0]);
 const {title, author, ISBN} = books[0];
@@ -399,7 +421,7 @@ printBookInfo({
   author: "Robert Sedgewick"
 });
 
-/******************************************* The Spread operator ... Unpack - Use on the right hand side ***************************************************************/
+/****************************************** The Spread operator ... Unpack - Use on the right hand side ***************************************************************/
 /*
 const arr = [7, 8, 9];
 // inserting at the beginning of the array
@@ -1005,7 +1027,65 @@ for (const player of game.scored)
 }
 console.log(scores);
 */
-  
+/************************************************************************* Sets **************************************************************************************/
+/*
+const newSet = new Set(["Pasta", "Pizza", "Pasta", "Burger"]);
+console.log(newSet);
+console.log(new Set("Max"));
+console.log(newSet.size);
+console.log(newSet.has("Bread"));
+console.log(newSet.has("Pasta"));
+newSet.add("Risotto");
+console.log(newSet);
+newSet.delete("Pasta");
+console.log(newSet);
+// newSet.clear();
+// console.log(newSet);
+for (const element of newSet) console.log(element);
+const ingredients = ["Pasta", "Pizza", "Pasta", "Burger"];
+console.log(new Set(ingredients));
+console.log([...new Set(ingredients)]); // Spread the elements into an array
+*/
+console.log(italianFoods.intersection(mexicanFoods)); // return similarities between 2 sets
+console.log([...italianFoods.intersection(mexicanFoods)]); // convert to array
+
+console.log(italianFoods.union(mexicanFoods)); //return both sets in 1, without similarities
+console.log(new Set([...italianFoods, ...mexicanFoods])); // with spread and new Set
+console.log([...new Set([...italianFoods, ...mexicanFoods])]); // with spread and new Set, converted to array
+
+console.log(italianFoods.difference(mexicanFoods)); // return the first set without its duplicates with the second set 
+
+console.log(italianFoods.symmetricDifference(mexicanFoods)); // return both sets in 1 where values are unique in both sets
+
+console.log(italianFoods.isDisjointFrom(mexicanFoods)); // return true if the 2 sets do not have any similarities, otherwise false
+/******************************************************************************* Challenge ****************************************************************************/
+/*
+//Loop over the books array, and fill the allKeywords array with the keywords coming from the keywords property of each book object. The allKeywords array should have just one level (no nested arrays).
+const allKeywords = [];
+for (const book of books)
+{
+  allKeywords.push(...book.keywords);
+}
+console.log(allKeywords);
+
+//The allKeyword array contains duplicates. Remove them by creating a Set out of that array. Assign the newly created set to the uniqueKeywords variable.
+const uniqueKeywords = new Set(allKeywords);
+console.log(uniqueKeywords);
+
+uniqueKeywords.add("coding");
+uniqueKeywords.add("science");
+console.log(uniqueKeywords);
+
+uniqueKeywords.delete("business");
+console.log(uniqueKeywords);
+
+//Create an array out of the uniqueKeywords set, and assign it to the uniqueKeywordsArr variable.
+const uniqueKeywordsArr = [...uniqueKeywords];
+console.log(uniqueKeywordsArr);
+
+uniqueKeywords.clear();
+*/
+
 
 
 
