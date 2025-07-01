@@ -6,5 +6,6 @@ Lecture Content
 - The For of Loop
 - Enhanced Object Literal
 - Optional Chaining
-- Looping over Objects
+- Loop over Objects
+- Sets
 - Challenges
