@@ -857,7 +857,7 @@ const newBook2 = {
   pages
 };
 console.log(newBook2);
-/**************************************************************************** Optional Chaining ************************************************************************/
+/**************************************************************************** Optional Chaining **********************************************************************/
 /*
 // Chack if a property exist and print the content if it does.
 // With if statement
@@ -897,4 +897,116 @@ function getFirstKeyword(bookObject)
 /*
 getFirstKeyword(books[0]);
 getFirstKeyword(newBook2);
+/***************************************************** Looping over Objects - They are not iterable ******************************************************************/
+/*
+// Keys
+for (const day of Object.keys(restaurant.openingHours)) console.log(day);
+console.log(Object.keys(restaurant.openingHours)); // create an array with keys from the object
+
+const properties = Object.keys(restaurant.openingHours);
+console.log(properties.length);
+
+let openStr = `We are open on ${properties.length} days: `;
+for (const day of properties) {
+  openStr += `${day}, `;
+};
+console.log(openStr);
+
+// Values
+console.log(Object.values(restaurant.openingHours)); 
+
+// Entries
+const entries = Object.entries(restaurant.openingHours); // create an array with keys and values
+console.log(entries);
+
+for (const [key, {open, close}] of entries) //destructuring the array's key and value. The latter with object destructuring 
+{
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+/******************************************************************************* Challenge ****************************************************************************/
+/*
+//Below is the entries variable that stores an empty array. Use the for-of loop together with the Object.keys() method to loop over the thirdParty.goodreads property (array) of the first book object from the books array. For each key, push a new array that contains that key to the entries array.
+const entries = [];
+for (const key of Object.keys(books[0].thirdParty.goodreads)) 
+{
+  entries.push([key]);
+}
+console.log(entries);
+
+//Use the for-of loop together with the Object.values() method and Array's entries() method to loop over thirdParty.goodreads property of the first book from the books array. Push each value to the appropriate inner array in the entries array (use index from entries()).
+
+//The Object.values() method returns an array, which means you can call the Array's entries() method on it.
+//The Array's entries() method returns [index, value] arrays for each element in the array
+const arrayEntries = Object.values(books[0].thirdParty.goodreads).entries();
+for (const [arrayKey, arrayValue] of arrayEntries) 
+{
+  
+  entries[arrayKey].push(arrayValue);
+}
+console.log(entries);
+
+//Use the Object.entries() method on the thirdParty.goodreads property of the first book from the books array. Assign the returned value to the variable called entries2. 
+const entries2 = Object.entries(books[0].thirdParty.goodreads); // this solotion is the combination of the previous two exercises
+console.log(entries2); 
 */
+/*********************************************************************** Coding Challenge 2 ***************************************************************************/
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scores' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+*/
+// 1.
+/*
+for (const [key, value] of game.scored.entries()) 
+{
+  console.log(`Goal ${key + 1}: ${value}`);
+}
+
+// 2.
+let sum = 0;
+const odds = Object.values(game.odds);
+for (const value of odds) 
+{
+  sum += value;
+}
+console.log(`The avereage odd is ${sum / odds.length}`);
+
+// 3.
+for (const [key, value] of Object.entries(game.odds)) 
+{
+  const toPrint = game[key] == undefined ? "draw" : `victory ${game[key]}:`;
+  console.log(`Odd of ${toPrint} ${value}`);
+}
+
+// Bonus.
+const scores = {};
+for (const player of game.scored)
+{
+  // with Ternary Operator
+  //scores[player] = scores[player] == undefined ? 1 : ++ scores[player];
+  // with Optional Chaining
+  scores[player] ? ++ scores[player] : scores[player] = 1;
+
+}
+console.log(scores);
+*/
+  
+
+
+
+
