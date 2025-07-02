@@ -1045,7 +1045,7 @@ for (const element of newSet) console.log(element);
 const ingredients = ["Pasta", "Pizza", "Pasta", "Burger"];
 console.log(new Set(ingredients));
 console.log([...new Set(ingredients)]); // Spread the elements into an array
-*/
+
 console.log(italianFoods.intersection(mexicanFoods)); // return similarities between 2 sets
 console.log([...italianFoods.intersection(mexicanFoods)]); // convert to array
 
@@ -1084,9 +1084,19 @@ const uniqueKeywordsArr = [...uniqueKeywords];
 console.log(uniqueKeywordsArr);
 
 uniqueKeywords.clear();
-*/
+/************************************************************************* Maps **************************************************************************************/
+const rest = new Map();
+rest.set("name", "Yakinori");
+rest.set(1, "Rome Italy");
+rest.set(2, "Lisbon Portugal");
+console.log(rest);
 
+rest.set("categories", ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+.set("open", 11)
+.set("close", 24);
+console.log(rest);
 
+console.log(rest.get("categories"));
 
 
 
