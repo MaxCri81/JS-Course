@@ -1115,6 +1115,34 @@ rest.delete(2);
 console.log(rest.size);
 console.log(rest.get(arr));
 //rest.clear();
+
+const question = new Map([
+  ["question", "What is the best programming language?"],
+  [1, "Java"],
+  [2, "Python"],
+  [3, "JavaScript"],
+  ["correct", 3],
+  [true, "Correct 🎉"],
+  [false, "Try again!"]
+]);
+console.log(question);
+
+console.log(restaurant.openingHours); // Object
+console.log(Object.entries(restaurant.openingHours)); // Object entries (array or arrays)
+console.log(new Map(Object.entries(restaurant.openingHours))); // Convert object entries to map
+
+console.log(question.get("question"));
+for (const [key, value] of question) {
+  //console.log(typeof key == "number" && `Answer ${key}: ${value}`);
+  if (typeof key == "number") console.log(`Answer ${key}: ${value}`);
+}
+const answer = 3;
+console.log(question.get(question.get("correct") === answer)); // get the rest value, from the true or false key, according to the expression result.
+
+//Convert map to array
+console.log([...question]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
 /******************************************************************************* Challenge ****************************************************************************/
 /*
 const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']]);
@@ -1123,6 +1151,15 @@ console.log(bookMap);
 console.log(`${bookMap.get("title")} by ${bookMap.get("author")}`);
 //Check if bookMap has the author key and if so, log "The author of the book is known" to the console.
 console.log(bookMap.get("author") && "The author of the book is known");
+
+// Convert the first book object from the books array into a Map, and assign it to a firstBookMap variable.
+const firstBookMap = new Map(Object.entries(books[0]))
+console.log(firstBookMap);
+// Use the for-of loop to iterate over firstBookMap, and log to the console keys that have numbers as values.
+for (const [key, value] of firstBookMap)
+{
+  if (typeof value === "number") console.log(value);
+}  
 */
 
 
