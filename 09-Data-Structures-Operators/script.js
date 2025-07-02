@@ -919,7 +919,7 @@ function getFirstKeyword(bookObject)
 /*
 getFirstKeyword(books[0]);
 getFirstKeyword(newBook2);
-/***************************************************** Looping over Objects - They are not iterable ******************************************************************/
+/***************************************************** Loop over Objects - They are not iterable ******************************************************************/
 /*
 // Keys
 for (const day of Object.keys(restaurant.openingHours)) console.log(day);
@@ -1085,6 +1085,9 @@ console.log(uniqueKeywordsArr);
 
 uniqueKeywords.clear();
 /************************************************************************* Maps **************************************************************************************/
+/*
+const arr = [1, 2];
+
 const rest = new Map();
 rest.set("name", "Yakinori");
 rest.set(1, "Rome Italy");
@@ -1093,10 +1096,39 @@ console.log(rest);
 
 rest.set("categories", ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
 .set("open", 11)
-.set("close", 24);
+.set("close", 24)
+.set(true, "We are open")
+.set(false, "We are closed")
+.set(arr, "test") // to get a value from an array key, the get method should refers to the same object in memory -> rest.get(arr) and not rest.get([1, 2])
+.set(document.querySelector("h1"), "heading");
 console.log(rest);
 
 console.log(rest.get("categories"));
+
+const time = 21;
+// get the rest value, from the true or false key, according to the expression result.
+console.log(rest.get(time >= rest.get("open") && time < rest.get("close"))); // 1st way
+console.log(rest.get(rest.get("open") <= time < rest.get("close"))); // 2nd way
+
+console.log(rest.has("categories"));
+rest.delete(2);
+console.log(rest.size);
+console.log(rest.get(arr));
+//rest.clear();
+/******************************************************************************* Challenge ****************************************************************************/
+/*
+const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']]);
+bookMap.set("pages", 464);
+console.log(bookMap);
+console.log(`${bookMap.get("title")} by ${bookMap.get("author")}`);
+//Check if bookMap has the author key and if so, log "The author of the book is known" to the console.
+console.log(bookMap.get("author") && "The author of the book is known");
+*/
+
+
+
+
+
 
 
 
