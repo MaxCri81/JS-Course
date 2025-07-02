@@ -77,7 +77,7 @@ const restaurant = {
   orderpasta : function(ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
   },
-
+  
   orderPizza: function(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
@@ -532,7 +532,7 @@ function printBookAuthorsCount(title, ...authors)
 /*
 printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
 */
-/********************************************************************** Short Circuiting *******************************************************************************/
+/******************************************************************** Short Circuiting *******************************************************************************/
 /*
 console.log(3 || "Max"); // if the first value is a truthy value, return it without validating the second one
 console.log(undefined || null || 0 || "" || "Hi" || 23); // return the first truthy value = "Hi"
@@ -608,7 +608,7 @@ function checkOnlineContentNullish(item)
 {
   item.onlineContent ?? console.log(`${item.title} provides no data about its online content`);
 }
-/**************************************************************** Logical Assignment Operators *************************************************************************/
+/*************************************************************** Logical Assignment Operators *************************************************************************/
 /*
 const rest1 = {
   name: "Capri",
