@@ -1202,9 +1202,62 @@ for (const [key, value] of gameEvents)
   console.log(`${key <= 45 ? "[FIRST" : "[SECOND"} HALF] ${key}: ${value}`);
 }
 /******************************************************************************* Strings ****************************************************************************/
+/*
+const airLIne = "ryanair ita";
+const plane = "A320";
+console.log(plane[0]);
+console.log("A320"[0]);
+console.log("A320".length);
+console.log(airLIne.indexOf("r"));
+console.log(airLIne.lastIndexOf("r"));
+console.log(airLIne.indexOf("nair"));
 
+console.log(airLIne.slice(4));
+console.log(airLIne.slice(0, 4));
+console.log(airLIne.indexOf(" "));
+console.log(airLIne.slice(0, airLIne.indexOf(" "))); // extract till the first space
+console.log(airLIne.slice(airLIne.indexOf(" ") + 1)); // extract the last part of the string after the space
 
+console.log(airLIne.slice(-3));
+console.log(airLIne.slice(0, -4));
 
+/**
+ * Log to the console whatever the last character of seat is a middle seat or no.
+ * "B" and "E" are middle seats
+ * @param {string} seat to check 
+ */
+function checkMiddleSeat(seat)
+{
+  // if (seat.slice(-1) === "B" || seat.slice(-1) === "E") console.log("You got the middle seat!");
+  // else console.log("you got lucky"); // traditional way
+  console.log(`You got ${seat.slice(-1) === "B" || seat.slice(-1) === "E" ? "the middle seat!": "lucky"}`); // ternary operator
+}
+/*
+checkMiddleSeat("11B");
+checkMiddleSeat("22C");
+checkMiddleSeat("3E");
+/******************************************************************************* Challenge ****************************************************************************/
+/*
+console.log(books[0].ISBN[6], books[0].ISBN[4], books[0].ISBN[9], books[0].ISBN[8]);
+
+const quote = 'A computer once beat me at chess, but it was no match for me at kick boxing';
+console.log(quote.indexOf("chess"));
+console.log(quote.slice(quote.lastIndexOf(" ") + 1));
+
+/**
+ * Returns either true of false if the author is a contributor. 
+ * The string "(Contributor)" is always the last part of the author's name string.
+ * @param {string} author to check
+ * @returns either true of false if the author is a contributor. 
+ */
+function isContributor(author)
+{
+  return author.lastIndexOf("(Contributor)") !== -1;
+}
+/*
+console.log(isContributor('Julie Sussman (Contributor)'));
+console.log(isContributor('Robert Sedgewick'));
+*/
 
 
 
