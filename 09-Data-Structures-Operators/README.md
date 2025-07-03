@@ -8,4 +8,5 @@ Lecture Content
 - Optional Chaining
 - Loop over Objects
 - Sets
+- Strings
 - Challenges
