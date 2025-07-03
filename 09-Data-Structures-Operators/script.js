@@ -1202,9 +1202,10 @@ for (const [key, value] of gameEvents)
   console.log(`${key <= 45 ? "[FIRST" : "[SECOND"} HALF] ${key}: ${value}`);
 }
 /******************************************************************************* Strings ****************************************************************************/
-/*
-const airLIne = "ryanair ita";
+
+const airLIne = "ryaNair ita";
 const plane = "A320";
+/*
 console.log(plane[0]);
 console.log("A320"[0]);
 console.log("A320".length);
@@ -1236,6 +1237,80 @@ function checkMiddleSeat(seat)
 checkMiddleSeat("11B");
 checkMiddleSeat("22C");
 checkMiddleSeat("3E");
+
+console.log(airLIne.toLowerCase());
+console.log(airLIne.toUpperCase());
+
+/**
+ * Returns the name with the first capital letter and the remaining ones in lower case
+ * @param {string} name to be fixed
+ * @returns the name with the first capital letter and the remaining ones in lower case
+ */
+function fixCapitalization(name)
+{
+  return name[0].toUpperCase() + name.slice(1).toLowerCase();
+}
+/*
+console.log(fixCapitalization("massImIliaNo"));
+console.log(fixCapitalization("giUSEppiNA"));
+
+/**
+ * Returns a reversed string
+ * @param {string} word to be reversed
+ * @returns a reversed string
+ */
+function reverseString(word)
+{
+  let toReturn ="";
+  for (let i= word.length -1; i >= 0; i--) toReturn += word[i];
+  return toReturn;
+}
+/*
+console.log(reverseString("Massimiliano"));
+console.log(reverseString("hello"));
+
+/**
+ * Verify if a word or phrase reads the same backwards and forwards
+ * @param {string} word to be checked
+ * @returns true or false if the word is palindrome
+ */
+function isPalindrome(word)
+{
+  return word === reverseString(word);
+}
+/*
+console.log(isPalindrome("racecar"));
+console.log(isPalindrome("level"));
+console.log("listen".includes("s"));
+
+/**
+ * Check if two strings are anagrams
+ * @param {string} word1 to check
+ * @param {string} word2 to check
+ * @returns true or false whether two words contain the exact same letters in any order
+ */
+function checkAnagrams(word1, word2)
+{
+  if (word1.length != word2.length) return false;
+  if (word1 === word2) return true;
+  for (let i=0; i < word1.length; i++)
+  {
+    if (!word2.includes(word1[i])) return false;
+  }
+  return true
+}
+/*
+console.log(checkAnagrams("listen", "silent"));
+const email = "    Hello@Jasd.com \n"
+console.log(email.toLowerCase().trim()); // lower case and spaces removed
+
+const priceGB = "288,97£";
+console.log(priceGB.replace("£", "$").replace(",", ".")); // replace £ and , with $ and . Only replace the first occurence
+const annoucement = "All passengers go to boarding door 23. Boarding door 23";
+console.log(annoucement.replaceAll("door", "gate")); // replace all occurrences
+
+console.log("Massimo".startsWith("Mass"));
+console.log("Massimo".endsWith("mo"));
 /******************************************************************************* Challenge ****************************************************************************/
 /*
 console.log(books[0].ISBN[6], books[0].ISBN[4], books[0].ISBN[9], books[0].ISBN[8]);
@@ -1257,9 +1332,21 @@ function isContributor(author)
 /*
 console.log(isContributor('Julie Sussman (Contributor)'));
 console.log(isContributor('Robert Sedgewick'));
+
+function normalizeAuthorName(name)
+{
+  const cleanName = name.trim().toLowerCase();
+  const firstName = cleanName.slice(0, 1).toUpperCase() + cleanName.slice(1, cleanName.indexOf(" "));
+  const lastName = cleanName.slice(cleanName.indexOf(" "), cleanName.indexOf(" ") +2).toUpperCase() + cleanName.slice(cleanName.indexOf(" ") +2, cleanName.lastIndexOf(" "));
+  console.log(`${firstName} ${lastName}`);
+  
+}
+normalizeAuthorName('  JuliE sussMan (Contributor)');
+
+// replace the word "Programs" with "Software"
+const newBookTitle = books[1].title.replace("Programs", "Software");
+console.log(newBookTitle);
 */
-
-
 
 
 
