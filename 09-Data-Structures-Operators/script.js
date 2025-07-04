@@ -1311,6 +1311,51 @@ console.log(annoucement.replaceAll("door", "gate")); // replace all occurrences
 
 console.log("Massimo".startsWith("Mass"));
 console.log("Massimo".endsWith("mo"));
+
+console.log("Massimo Crisafulli".split(" "));
+const [firstName, lastName] = "Massimo Crisafulli".split(" "); // split a string by " "
+
+const newName = ['Mr', firstName, lastName.toUpperCase()].join(" "); // join a string by " "
+console.log(newName);
+
+/**
+ * Returns all names with the first capital letter and the rest in lower cases
+ * @param {string} name(s) to be capitalized
+ * @returns all names with the first capital letter and the rest in lower cases
+ */
+function capitalizeName(name)
+{
+  const capitalizedName = [];
+  for (const n of name.split(" "))
+  {
+    //capitalizedName.push(n.replace(n[0], n[0].toUpperCase()));
+    capitalizedName.push(n[0].toUpperCase() + n.slice(1).toLowerCase());
+  }
+  return capitalizedName.join(" ");
+}
+/*
+console.log(capitalizeName("jessica ann smITh"));
+console.log(capitalizeName("massimo crisafulli"));
+
+console.log(" Go to gate 25".padStart(25, "+"));
+console.log("Go to gate 25 ".padEnd(25, "+"));
+
+/**
+ * @param {string/number} number to be masked
+ * @returns a string with the last 4 digits visible and the rest masked by the "*"
+ */
+function maskNumber(number)
+{
+  const stringNumber = number + ""; // convert to string
+  const slicedNumber = stringNumber.slice(-4); // take the last 4 digits
+  return slicedNumber.padStart(stringNumber.length, "*"); // mask all the remaing characters
+}
+/*
+console.log(maskNumber(5633423453));
+console.log(maskNumber("554435798689"));
+
+console.log("Bad weather, warning! ".repeat(3));
+console.log("There are 3 planes waiting" + "✈️".repeat(3));
 /******************************************************************************* Challenge ****************************************************************************/
 /*
 console.log(books[0].ISBN[6], books[0].ISBN[4], books[0].ISBN[9], books[0].ISBN[8]);
