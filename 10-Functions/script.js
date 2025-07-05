@@ -17,6 +17,7 @@ function createBooking(flightNum, numPassengers = 1, price = 199 * numPassengers
     console.log(booking);
     bookingsArray.push(booking);
 };
+/*
 createBooking("A920");
 createBooking("A230", 2);
 createBooking("A340", 2, 500);
@@ -25,7 +26,7 @@ createBooking("A340", undefined, 270); // skip the second parameter, leaving it 
 /**
  * Strip spaces out of a string
  * @param {string} stringWord string to be stripped out of spaces
- * @returns a string with no spaces on it and converted to lower case
+ * @returns a string with no spaces on it, converted to lower case
  */
 function oneWord(stringWord)
 {
@@ -56,6 +57,20 @@ function transformer(stringWord, callback)
 
     console.log(`Transformed by: ${callback.name}`); // functions have properties too (like name in this case)
 }
+/*
 transformer("JavaScript is the best!", upperFirstWord);
 transformer("JavaScript is the best!", oneWord);
+/*************************************************************************** Returning a function ********************************************************************/
+/*
+function greet(greeting)
+{
+    return name => console.log(`${greeting} ${name}`);
+}
+const greetTest = greet("Hi");
+greetTest("Massimo");
+greet("Hi")("Giusy");
 
+const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
+greetArrow("Hi")("Max");
+greetArrow("Hi")("Giusy");
+*/
