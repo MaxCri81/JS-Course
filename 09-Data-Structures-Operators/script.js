@@ -1105,7 +1105,7 @@ console.log(rest.get("categories"));
 const time = 21;
 // get the rest value, from the true or false key, according to the expression result.
 console.log(rest.get(time >= rest.get("open") && time < rest.get("close"))); // 1st way
-console.log(rest.get(rest.get("open") <= time < rest.get("close"))); // 2nd way
+console.log(rest.get(rest.get("open") <= time && time < rest.get("close"))); // 2nd way
 
 console.log(rest.has("categories"));
 rest.delete(2);
