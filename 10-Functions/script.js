@@ -196,25 +196,26 @@ const poll = {
     const answer = Number(prompt(`${this.question}\n${this.options[0]}\n${this.options[1]}\n${this.options[2]}\n${this.options[3]}\n(Write option number)`));
     // Short circuiting - to avoid write an if statement
     typeof answer === "number" && 0 <= answer && answer < this.answers.length && this.answers[answer] ++;
+    // 4.
     this.displayResults();
     this.displayResults("string");
   }
 };
 
 // 2.
-document.querySelector(".poll").addEventListener("click", poll.registerNewAnswer.bind(poll));
+document.querySelector(".poll").addEventListener("click", poll.registerNewAnswer.bind(poll)); // binding poll object to "this" keyword
 
 // 3.
 poll.displayResults = function(type = "array") {
   if (type === "array") {
     console.log(this.answers);
   } else if (type === "string") {
-    console.log(`Poll results are ${this.answers.join(", ")}`);
+    console.log(`Poll results are ${this.answers.join(", ")}`); // convert array to a single string and values separated by comma
   }
 };
 
-//4
-// create a new object with answers property and manually assign the test array to it
+// Bonus.
+// create a new object with answers property and manually assigning the test array to it
 poll.displayResults.call({answers: [5, 2, 3]});
 poll.displayResults.call({answers: [5, 2, 3]}, "string");
 poll.displayResults.call({answers: [1, 5, 3, 9, 6, 1]});
