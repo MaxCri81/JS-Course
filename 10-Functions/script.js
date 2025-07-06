@@ -115,5 +115,43 @@ console.log(easyjet.bookings);
 bookFunction.call(easyjet, ...[521, "Annah Red"]); // same as the above
 console.log(easyjet.bookings);
 /*************************************************************************** Bind method ************************************************************************/
+/*
+const bookEA = bookFunction.bind(easyjet); // the bind method specify with object is assigned to 'this' and return the binded function
+bookEA(657, "Steve Williams");
+console.log(easyjet.bookings);
 
+const bookEA23 = bookFunction.bind(easyjet, 23); // other than binding 'this' to easyjet, it binds 23 as flightNum
+bookEA23("Arianna Madison"); //since we binded the flightNum in bookEA23, we only need to pass the name as parameter
+console.log(easyjet.bookings);
 
+ryanair.planes = 300;
+ryanair.buyPlanes = function() 
+{
+    console.log(this);
+    this.planes ++;
+    console.log(this.planes);
+}
+//document.querySelector(".buy").addEventListener("click", ryanair.buyPlanes); //it doesn't work because 'this' points to the button element
+document.querySelector(".buy").addEventListener("click", ryanair.buyPlanes.bind(ryanair)); //we can't use 'call' because it calls the function immediately, so we need bind
+
+// Partial application (means: partial binding)
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23); // binding the rate (we are not interested in 'this', so we pass null)
+console.log(addVAT(100));
+
+/**
+ * @param {number} rate the VAT rate
+ * @returns a function which calculate the value with the VAT added
+ */
+function addTaxRate(rate) {
+   return function(value) {
+    return value + value * rate;
+   }
+};
+/*
+const addVAT2 = addTaxRate(0.23); //as above with the 'bind' example in addVAT
+console.log(addVAT2(100));
+console.log(addVAT2(200));
+/******************************************************************************************* Challenge *****************************************************************/
