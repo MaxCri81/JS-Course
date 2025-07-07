@@ -186,6 +186,7 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
 */
+/*
 // 1.
 const poll = {
   question: 'What is your favourite programming language?',
@@ -210,7 +211,7 @@ poll.displayResults = function(type = "array") {
   if (type === "array") {
     console.log(this.answers);
   } else if (type === "string") {
-    console.log(`Poll results are ${this.answers.join(", ")}`); // convert array to a single string and values separated by comma
+    console.log(`Poll results are ${this.answers.join(", ")}`); // convert array to a single string with values separated by comma
   }
 };
 
@@ -221,6 +222,6 @@ poll.displayResults.call({answers: [5, 2, 3]});
 poll.displayResults.call({answers: [5, 2, 3]}, "string");
 poll.displayResults.call({answers: [1, 5, 3, 9, 6, 1]});
 poll.displayResults.call({answers: [1, 5, 3, 9, 6, 1]}, "string");
-
+/********************************************************** Immediate invoked function expression (IIFE) *************************************************************/
 
 
