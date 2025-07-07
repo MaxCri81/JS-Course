@@ -223,5 +223,78 @@ poll.displayResults.call({answers: [5, 2, 3]}, "string");
 poll.displayResults.call({answers: [1, 5, 3, 9, 6, 1]});
 poll.displayResults.call({answers: [1, 5, 3, 9, 6, 1]}, "string");
 /********************************************************** Immediate invoked function expression (IIFE) *************************************************************/
+// Wrap the function in parenthesis, and immediately call it with ()
+// Standard function
+/*
+(function () {
+  console.log("Immediate invoked function expression");
+})();
 
+// Array function
+(() => console.log("Immediate invoked function expression"))();
+/************************************************************************ Closure ***********************************************************************************/
+function secureBooking() {
+  // this variable is stored automatically in the returned function, thanks to 'closure'.
+  let passengerCount = 0;
 
+  return function() {
+    passengerCount ++;
+    console.log(`${passengerCount} passengers`);
+  }
+};
+/*
+const booker = secureBooking();
+booker();
+booker();
+booker();
+
+console.dir(booker);
+*/
+let f;
+function g(){
+  const a = 23;
+  f = function(){
+    console.log(a * 2);
+  }
+}
+
+function h(){
+  const b = 777;
+  f = function(){
+    console.log(b * 2);
+  }
+}
+/*
+// f is assigned with the function in g with the variable a = 23
+g();
+f();
+// f is assigned with the function in h with the variable b = 777
+h();
+f();
+
+// Timer
+setTimeout(function(){console.log("Timer");}, 1000);
+
+/**
+ * 
+ * @param {number} n - number of passengers
+ * @param {number} wait - seconds to wait before logging the messages
+ */
+function boardPassengers(n, wait) {
+  const perGroup = n / 3;
+  /**
+   * The function is called automatically with a timer after waiting 'wait' seconds.
+   * It logs a few strings to demonstrate closure; perGroup, n and wait are
+   * declared in the parent function boardPassengers.
+   */ 
+  setTimeout(function(){
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  // This will be logged immediately
+  console.log(`We will start boarding in ${wait} seconds`);
+};
+/*
+boardPassengers(180, 3);
+/******************************************************************************************* Challenge *****************************************************************/
