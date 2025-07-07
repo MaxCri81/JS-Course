@@ -215,7 +215,8 @@ poll.displayResults = function(type = "array") {
 };
 
 // Bonus.
-// create a new object with answers property and manually assigning the test array to it
+// create a new object with answers property,inside the method call, and manually assigning the test array to it
+// in this way the "this" keyword will point to the answers property passed in the call method.
 poll.displayResults.call({answers: [5, 2, 3]});
 poll.displayResults.call({answers: [5, 2, 3]}, "string");
 poll.displayResults.call({answers: [1, 5, 3, 9, 6, 1]});
