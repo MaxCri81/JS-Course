@@ -1,7 +1,5 @@
 'use strict';
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
 // BANKIST APP
 
 // Data
@@ -61,8 +59,6 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
 // LECTURES
 
 const currencies = new Map([
@@ -73,4 +69,28 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-/////////////////////////////////////////////////
+/******************************************************************************* Array methods *************************************************************************/
+/*
+// Slice doesn't change the original array
+let arr = ["a", "b", "c", "d", "e"];
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4)); // delete from index 2 to 4 (excluded)
+console.log(arr.slice()); // create an array copy
+console.log([...arr]); // create an array copy
+
+arr = ["a", "b", "c", "d", "e"];
+const arr2 = ["l", "i", "h", "g", "f"];
+console.log(arr2.reverse());
+console.log(arr2);
+console.log(arr.concat(arr2));
+console.log([...arr, ...arr2]);
+
+console.log([...arr, ...arr2].join(" - "));
+
+// Array mutating methods
+console.log(arr.splice(-1));
+console.log(arr.splice(1, 2)); // delete 2 elemtents from the array starting from index 1
+console.log(arr);
+*/
+
+
