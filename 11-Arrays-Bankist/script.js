@@ -68,15 +68,15 @@ const currencies = new Map([
 ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
 /******************************************************************************* Array methods *************************************************************************/
 /*
-// Slice doesn't change the original array
+// Methods that do NOT mutate the original array
 let arr = ["a", "b", "c", "d", "e"];
 console.log(arr.slice(2));
 console.log(arr.slice(2, 4)); // delete from index 2 to 4 (excluded)
 console.log(arr.slice()); // create an array copy
 console.log([...arr]); // create an array copy
+console.log(arr.slice(-1));
 
 arr = ["a", "b", "c", "d", "e"];
 const arr2 = ["l", "i", "h", "g", "f"];
@@ -91,6 +91,29 @@ console.log([...arr, ...arr2].join(" - "));
 console.log(arr.splice(-1));
 console.log(arr.splice(1, 2)); // delete 2 elemtents from the array starting from index 1
 console.log(arr);
+
+const arrNew = [23, 11, 64];
+console.log(arrNew[0]);
+console.log(arrNew.at(0));
+
+console.log(arrNew[arrNew.length - 1]); // last element in the traditional way
+console.log(arrNew.slice(-1)[0]); // last element with the slice method
+console.log(arrNew.at(-1)); // last element with the 'at' method
+
+console.log("Massimo".at(0));
+console.log("Massimo".at(-1));
 */
+/****************************************************************************** forEach ******************************************************************************/
+/*
+// For method
+// for (const movement of movements) {
+//   console.log((`You ${movement > 0 ? "deposited" : "witdrew"} ${Math.abs(movement)}`));
+// };
 
+// forEach method
+movements.forEach( (movement) => console.log((`You ${movement > 0 ? "deposited" : "witdrew"} ${Math.abs(movement)}`)));
 
+// The forEach method can returns the value, index and the array, if they are specified as parameters inside the function
+// You cannot break the forEach loop iteration, the for method on the contrary can be broken. 
+movements.forEach( (movement, index, array) => console.log(movement, index, array));
+*/
