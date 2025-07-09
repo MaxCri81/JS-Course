@@ -116,4 +116,8 @@ movements.forEach( (movement) => console.log((`You ${movement > 0 ? "deposited" 
 // The forEach method can returns the value, index and the array, if they are specified as parameters inside the function
 // You cannot break the forEach loop iteration, the for method on the contrary can be broken. 
 movements.forEach( (movement, index, array) => console.log(movement, index, array));
+
+currencies.forEach((value, key, map)=> console.log(key, value));
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR']);
+currenciesUnique.forEach( (value) => console.log(value)); // in sets keys and values are the same (there are no keys, only values)
 */
