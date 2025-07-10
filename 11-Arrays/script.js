@@ -88,3 +88,23 @@ function checkDogs(juliaArray, kateArray)
 };
 //checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 //checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+/******************************************************************* Map method ***************************************************************************************/
+const eurToUsd = 1.5;
+/**
+ * For each iteration in the array returns the current value times eurToUsd
+ * @param {number} value - map iteration value
+ * @returns a new array containing the new mapped values
+ */
+const movementsUSD = movements.map(function(value){
+  return value * eurToUsd;
+});
+
+// Same as above but with arrow function.
+const movementsUSDArrow = movements.map(value => value * eurToUsd);
+console.log(movements);
+console.log(movementsUSDArrow);
+
+const movementsDescription = movements.map((value, index) => 
+  `Movement ${index +1}: You ${value > 0 ? "deposited" : "witdrew"} ${Math.abs(value)}`
+);
+console.log(movementsDescription);
