@@ -5,4 +5,5 @@ Lecture Content
 * The Map method
 * The Filter method
 * The Reduce method
+* Chaining all them up
 * Challenges
