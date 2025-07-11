@@ -126,10 +126,50 @@ console.log(movements.filter(value => value > 0));
 console.log(movements.filter(value => value < 0));
 /********************************************************************* Reduce *****************************************************************************************/
 // In reduce, the values retured from the method calls are (accumulator, value, index, array) in this order
+/** 
+ * Sum all the values in the movements array and return the result 
+ * starting from a value of 0.
+ */
 const balance = movements.reduce(function(sum, value){
   return sum + value;
 },0); // the 0 is the starting point for the sum variable
+/*
 console.log(balance);
+// Same as above but with arrow function and starting from a value of 3000
 console.log(movements.reduce((sum, value) => sum + value, 3000));
 
+/** Print the maximum value in the movements array, starting from the array value at position 0 */
+const findMax = movements.reduce((acc, value) => acc > value ? acc : value, movements[0]);
+//console.log(findMax);
+/**************************************************************************** Challenge 2 *****************************************************************************/
+/* 
+Let's go back to Julia and Kate's study about dogs. This time, they want to convert dog ages to human ages and calculate the average age of the dogs in their study.
+
+Create a function 'calcAverageHumanAge', which accepts an arrays of dog's ages ('ages'), and does the following things in order:
+
+1. Calculate the dog age in human years using the following formula: if the dog is <= 2 years old, humanAge = 2 * dogAge. If the dog is > 2 years old, humanAge = 16 + dogAge * 4.
+2. Exclude all dogs that are less than 18 human years old (which is the same as keeping dogs that are at least 18 years old)
+3. Calculate the average human age of all adult dogs (you should already know from other challenges how we calculate averages 😉)
+4. Run the function for both test datasets
+
+TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
+TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
+
+GOOD LUCK 😀
+*/
+function calcAverageHumanAge(ages) {
+  // 1.
+  const convertedAges = ages.map(age => age <= 2 ? 2 * age : 16 + age * 4);
+  console.log(convertedAges);
+  // 2.
+  const filterDogs = convertedAges.filter(age => age >= 18);
+  console.log(filterDogs);
+  // 3.
+  const averageAge = filterDogs.reduce((acc, value) => acc + value / filterDogs.length, 0);
+  console.log(averageAge);
+};
+/*
+calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+*/
 
