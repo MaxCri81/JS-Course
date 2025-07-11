@@ -89,7 +89,7 @@ function checkDogs(juliaArray, kateArray)
 //checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 //checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 /******************************************************************* Map method ***************************************************************************************/
-
+// In map and filter, the values retured from the method calls are (value, index, array) in this order
 const eurToUsd = 1.5;
 /**
  * For each iteration in the array returns the current value times eurToUsd
@@ -116,7 +116,20 @@ const user = "Steven Thomas Williams";
  * in the user string, in lower case.
  */
 const username = user.toLowerCase().split(" ").map(value => value[0]).join("");
-console.log(username);
-
+//console.log(username);
+/********************************************************************* Filter ******************************************************************************************/
+/*
+// In map and filter, the values retured from the method calls are (value, index, array) in this order
+// Returns only value greater than 0
+console.log(movements.filter(value => value > 0));
+// Returns only value smaller than 0
+console.log(movements.filter(value => value < 0));
+/********************************************************************* Reduce *****************************************************************************************/
+// In reduce, the values retured from the method calls are (accumulator, value, index, array) in this order
+const balance = movements.reduce(function(sum, value){
+  return sum + value;
+},0); // the 0 is the starting point for the sum variable
+console.log(balance);
+console.log(movements.reduce((sum, value) => sum + value, 3000));
 
 
