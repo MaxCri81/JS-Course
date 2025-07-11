@@ -90,7 +90,7 @@ function checkDogs(juliaArray, kateArray)
 //checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 /******************************************************************* Map method ***************************************************************************************/
 // In map and filter, the values retured from the method calls are (value, index, array) in this order
-const eurToUsd = 1.5;
+const eurToUsd = 1.1;
 /**
  * For each iteration in the array returns the current value times eurToUsd
  * @param {number} value - map iteration value
@@ -172,4 +172,15 @@ function calcAverageHumanAge(ages) {
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 */
+/************************************************************** Chaining all them up ********************************************************************************/
+/*
+// filter the positive values in the array, multiply the by the dollar conversion value and sum the values up.
+const totalDepositUSD = movements.filter(value => value > 0).map(value => value * eurToUsd).reduce((accumulator, value) => accumulator + value, 0);
+console.log(totalDepositUSD);
 
+// demonstrates how to inspect the pipeline by logging the array resulting from the previous concatenation
+const checkTotalDepositUSD = movements.filter(value => value > 0).map((value, index, array) => {
+  console.log(array);
+  return value * eurToUsd;
+}).reduce((accumulator, value) => accumulator + value, 0);
+*/
