@@ -242,4 +242,10 @@ console.log(accounts);
 // iterate the accounts array and check the condition. if the condition is satisfied return its index otherwise return -1
 console.log(accounts.findIndex(account => account.owner === "Steven Thomas Williams")); 
 console.log(accounts.indexOf(account4)); // check that the array contains the account4 object
-*/
+/*************************************************************** findLast, findLastIndex *****************************************************************************/
+/*
+console.log(movements);
+console.log(movements.findLast(movement => movement < 0)); // find the last negative number
+const latestLargerMovement = movements.findLastIndex(movements => movements > 2000);
+console.log(`Your latest movement was ${movements.length - latestLargerMovement} movements ago`); // counting from right to left
+/******************************************************************** Some and every *********************************************************************************/
