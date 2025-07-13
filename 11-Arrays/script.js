@@ -230,8 +230,10 @@ const calcAverageHumanAgeArrow = ages => ages
 //console.log(calcAverageHumanAgeArrow([5, 2, 4, 1, 15, 8, 3]), calcAverageHumanAgeArrow([16, 6, 10, 5, 6, 1, 4]));
 /*************************************************************************** Find method ******************************************************************************/
 // the 'find' method retrieve the first element which satisfy the condition. It does NOT return a new array, like with 'filter', but just a value.
+/*
 console.log(movements);
 console.log(movements.find(mov => mov < 0)); // the first negative number
 
 console.log(accounts);
 console.log(accounts.find(account => account.owner === "Jessica Davis")); // return the object with the owner = "Jessica Davis"
+*/
