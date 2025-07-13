@@ -59,7 +59,7 @@ console.log([...arr, ...arr2].join(" - "));
 
 // Array mutating methods
 console.log(arr.splice(-1));
-console.log(arr.splice(1, 2)); // delete 2 elemtents from the array starting from index 1
+console.log(arr.splice(1, 2)); // delete 2 elements from the array starting from index 1
 console.log(arr);
 
 const arrNew = [23, 11, 64];
@@ -236,4 +236,10 @@ console.log(movements.find(mov => mov < 0)); // the first negative number
 
 console.log(accounts);
 console.log(accounts.find(account => account.owner === "Jessica Davis")); // return the object with the owner = "Jessica Davis"
+/********************************************************************* findIndex method ******************************************************************************/
+/*
+console.log(accounts);
+// iterate the accounts array and check the condition. if the condition is satisfied return its index otherwise return -1
+console.log(accounts.findIndex(account => account.owner === "Steven Thomas Williams")); 
+console.log(accounts.indexOf(account4)); // check that the array contains the account4 object
 */
