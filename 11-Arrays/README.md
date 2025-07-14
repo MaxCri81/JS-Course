@@ -6,4 +6,6 @@ Lecture Content
 * The Filter method
 * The Reduce method
 * Chaining all them up
+* find, findIndex, findLast, findLastIndex
+* Some, every and includes
 * Challenges
