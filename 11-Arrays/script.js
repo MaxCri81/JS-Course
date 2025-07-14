@@ -248,4 +248,12 @@ console.log(movements);
 console.log(movements.findLast(movement => movement < 0)); // find the last negative number
 const latestLargerMovement = movements.findLastIndex(movements => movements > 2000);
 console.log(`Your latest movement was ${movements.length - latestLargerMovement} movements ago`); // counting from right to left
-/******************************************************************** Some and every *********************************************************************************/
+/************************************************************** Some, every and includes ******************************************************************************/
+/*
+console.log(movements);
+console.log(movements.includes(450)); // check for equality
+
+console.log(movements.some(value => value > 1300)); // check that at least one value satisfy the condition
+
+console.log(movements.every(value => value > 0)); // check that all values satisfy the condition
+*/
