@@ -8,4 +8,5 @@ Lecture Content
 * Chaining all them up
 * find, findIndex, findLast, findLastIndex
 * Some, every and includes
+* flat and flatMap
 * Challenges
