@@ -9,4 +9,5 @@ Lecture Content
 * find, findIndex, findLast, findLastIndex
 * Some, every and includes
 * flat and flatMap
+* sorting array
 * Challenges
