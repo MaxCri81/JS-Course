@@ -354,4 +354,23 @@ console.log(breeds.some(dog => dog.activities.length >= 3));
 
 // Bonus
 console.log(Math.max(...breeds.filter(dog => dog.activities.includes("fetch")).map(dog => dog.averageWeight)));
+/********************************************************************* Sorting Arrays ****************************************************************************/
+/*
+// Mutating the original array
+const owners = ["Jons", "Zach", "Adam", "Martha"];
+console.log(owners.sort());
+console.log(owners);
+
+console.log(movements);
+//console.log(movements.sort()); // it doesn't sort properly as it treats numbers as strings
+
+// comparator similar to the Java one
+// Ascending order
+// the rule is that in 2 numbers 'a' and 'b', the left one should be smaller and the right one
+// so, if 'a' (left number) is bigger than 'b', you assign 1 to it, meaning that it comes after, 
+// and b comes before with -1, and vice versa. 
+//movements.sort((a, b) => a > b ? 1 : -1);
+// the above can be rewritten as the following
+movements.sort((a, b) => a - b);
+console.log(movements);
 */
