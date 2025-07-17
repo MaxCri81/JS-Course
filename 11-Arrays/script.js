@@ -397,5 +397,38 @@ console.log(groupedByActivity);
 // const groupedAccount = Object.groupBy(accounts, account => account.type);
 const groupedAccount = Object.groupBy(accounts, ({type}) => type); // with object destructuring
 console.log(groupedAccount);
+/******************************************************************* Creating and filling arrays *********************************************************************/
+/*
+const x = new Array(7);
+x.fill(1);
+console.log(x);
+
+const arr = [1,2,3,4,5,6,7,8];
+arr.fill(23, 3, 6); // fill arr from index 3 to 5
+console.log(arr);
+
+const y = Array.from({length: 7}, () => 1); // create an array of length 7 with all 1s
+console.log(y);
+
+// const z = Array.from({length: 7}, (value, index) => index + 1); // (value, index) => it is like the map method
+const z = Array.from({length: 7}, (_, index) => index + 1); // same as above but since we don't use the first parameter 'value', we can use the _ as convention
+console.log(z);
+
+
+const randomDice = () => Math.trunc(Math.random() * 6) + 1;
+const oneHundredDices = Array.from({length: 100}, randomDice);
+console.log(oneHundredDices);
+
+// Select all elements with the 'movements__value' class. This will create a node list.
+// Create an array from the node list, extracting their values, converting them to numbers and removing the euro sign.
+const movementsUI = Array.from(document.querySelectorAll(".movements__value"), element => Number(element.textContent.replace("€", "")));
+console.log(movementsUI);
+
+console.log([...document.querySelectorAll(".movements__value")]); // we can use this instead of: Array.from(document.querySelectorAll(".movements__value") but map must be done separately
 */
+
+
+
+
+
 
