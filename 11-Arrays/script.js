@@ -460,19 +460,9 @@ YOUR TASKS:
 HINT 1: Use many different tools to solve these challenges, you can use the summary lecture to choose between them 😉
 HINT 2: Being within a range 10% above and below the recommended portion means: current > (recommended * 0.90) && current < (recommended * 1.10). Basically, the current portion should be between 90% and 110% of the recommended portion.
 
-TEST DATA:
-const dogs = [
-  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
-  { weight: 8, curFood: 200, owners: ['Matilda'] },
-  { weight: 13, curFood: 275, owners: ['Sarah', 'John', 'Leo'] },
-  { weight: 18, curFood: 244, owners: ['Joe'] },
-  { weight: 32, curFood: 340, owners: ['Michael'] },
-];
-
 GOOD LUCK 😀
 */
 
-/*
 const dogs = [
   { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
   { weight: 8, curFood: 200, owners: ['Matilda'] },
@@ -480,9 +470,66 @@ const dogs = [
   { weight: 18, curFood: 244, owners: ['Joe'] },
   { weight: 32, curFood: 340, owners: ['Michael'] },
 ];
-*/
 
+// 1.
+dogs.map(dog => dog.recommendedFood = Math.floor(dog.weight ** 0.75 * 28));
+console.log(dogs);
 
+// 2.
+const dogObject = dogs.find(dog => dog.owners.includes("Sarah"));
+// console.log(`Sarah's dog is eating too ${dogObject?.curFood > dogObject.recommendedFood ? "much" : "little"}`);
+const toPrint = "Sarah's dog is eating ";
+if (dogObject?.curFood > dogObject.recommendedFood * 1.10) {
+  console.log(toPrint + "too much");
+} else if (dogObject?.curFood < dogObject.recommendedFood * 0.9) {
+  console.log(toPrint + "too little");
+} else 
+  console.log(toPrint + "ok");
+
+// 3.
+const eatingMuch = dogs.filter(dog => dog.curFood > dog.recommendedFood * 1.10).flatMap(dog => dog.owners);
+const eatingLittle = dogs.filter(dog => dog.curFood < dog.recommendedFood * 0.9).flatMap(dog => dog.owners);
+console.log(eatingMuch);
+console.log(eatingLittle);
+
+// 4.
+console.log(`${eatingMuch.join(" and ")}'s dogs eat too much! while ${eatingLittle.join(" and ")}'s dogs eat too low!`);
+
+// 5.
+console.log(dogs.some(dog => dog.curFood === dog.recommendedFood));
+
+// 6.
+// check if the dog is eating withing the range of 0.90 and 1.10 of the recommendedFood
+const eatingOK = ()=> dog => dog.curFood > dog.recommendedFood * 0.90 && dog.curFood < dog.recommendedFood * 1.10;
+console.log(dogs.every(eatingOK()));
+
+// 7.
+console.log(dogs.filter(eatingOK()));
+
+// 8.
+const groupedByCurfood = Object.groupBy(dogs, dog => {
+  if (dog.curFood > dog.recommendedFood) return "too-much";
+  if (dog.curFood < dog.recommendedFood) return "too-little";
+  return "exact" 
+});
+console.log(groupedByCurfood);
+
+// 9.
+const groupedOwners = Object.groupBy(dogs, dog => `${dog.owners.length}-owners`); // with object destructuring
+console.log(groupedOwners);
+
+// 10.
+// Ascending order with sort (comparator)
+console.log(dogs.slice().sort((a, b) => a.recommendedFood - b.recommendedFood));
+console.log(dogs);
+
+// Ascending order with toSorted (comparator)
+console.log(dogs.toSorted((a, b) => a.recommendedFood - b.recommendedFood));
+console.log(dogs);
+
+// Descending order with toSorted (comparator)
+console.log(dogs.toSorted((a, b) => b.recommendedFood - a.recommendedFood));
+console.log(dogs);
 
 
 
